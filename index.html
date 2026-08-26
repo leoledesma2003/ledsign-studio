@@ -169,6 +169,23 @@
   }
   .community-pill b{font-size:1rem;}
 
+  .hero-logo{width:84px;height:auto;margin:0 auto 30px;display:block;position:relative;z-index:1;}
+  .hero-brand{max-width:780px;position:relative;z-index:1;}
+  .hero-brand .section-tag{justify-content:center;}
+  .hero-brand h1{font-size:clamp(2.3rem,6vw,3.8rem);font-weight:800;line-height:1.16;margin:18px 0 22px;text-wrap:balance;}
+  .hero-brand .hero-sub{color:var(--text-dim);font-size:1.08rem;max-width:620px;margin:0 auto 34px;line-height:1.75;}
+  .hero-cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px;}
+  .btn-outline{
+    display:inline-flex;align-items:center;border:1px solid var(--border);color:var(--text);
+    font-weight:700;padding:14px 32px;border-radius:30px;font-size:.95rem;transition:border-color .25s,color .25s,transform .25s;
+  }
+  .btn-outline:hover{border-color:var(--c2);color:var(--c2);transform:translateY(-2px);}
+  .hero-proof{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;}
+  .hero-proof .proof-item{
+    font-size:.82rem;font-weight:600;color:var(--text-dim);border:1px solid var(--border);
+    padding:7px 16px;border-radius:20px;
+  }
+
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease;}
   .reveal.visible{opacity:1;transform:translateY(0);}
@@ -445,52 +462,20 @@
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
 
-  <div class="ig-card reveal">
-    <div class="avatar-wrap">
-      <div class="avatar-ring"></div>
-      <div class="avatar-inner">
-        <img src="assets/logo.png" alt="LEDSIGN Studio" class="brand-logo">
-      </div>
+  <div class="hero-brand reveal">
+    <img src="assets/logo.png" alt="LEDSIGN Studio" class="hero-logo">
+    <div class="section-tag">Nuestra historia</div>
+    <h1>Empezamos con una idea: <span class="grad-text">que ningún negocio se quede afuera de internet.</span></h1>
+    <p class="hero-sub">Así nació LEDSIGN Studio hace más de un año — aprendiendo con cada proyecto real, desde FullStand hasta el sistema de gestión que hoy usa Wartung Automation. Pensamos cada trabajo desde el lugar del cliente: como si fuéramos nosotros quienes lo estuviéramos comprando.</p>
+    <div class="hero-cta-row">
+      <a href="#contacto" class="btn-grad">Empezá tu proyecto</a>
+      <a href="#servicios" class="btn-outline">Ver servicios</a>
     </div>
-
-    <div class="ig-name-row">
-      <h2>LEDSIGN Studio</h2>
-      <span class="verified">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
+    <div class="hero-proof">
+      <span class="proof-item">FullStand</span>
+      <span class="proof-item">Wartung Automation</span>
+      <span class="proof-item">SinCity</span>
     </div>
-    <a href="https://www.instagram.com/ledsign_studio/" target="_blank" class="ig-handle">@ledsign_studio</a>
-    <div class="ig-category">Estudio creativo · Diseño Web &amp; Marketing Digital</div>
-    <p class="ig-bio">Somos un estudio creativo especializado en convertir ideas en experiencias digitales. Diseñamos y desarrollamos sitios web y campañas de marketing digital para que tu negocio consiga más clientes. Trabajamos 100% en remoto — si tu proyecto necesita una reunión presencial, la coordinamos sin problema.</p>
-
-    <a href="https://www.instagram.com/ledsign_studio/" target="_blank" style="text-decoration:none;color:inherit;">
-    <div class="ig-stats" style="cursor:pointer;" title="Ver perfil actualizado en Instagram">
-      <div class="stat"><strong>11</strong><span>Publicaciones</span></div>
-      <div class="stat"><strong>161</strong><span>Seguidores</span></div>
-      <div class="stat"><strong>3</strong><span>Seguidos</span></div>
-    </div>
-    </a>
-
-    <div class="ig-actions">
-      <a href="#contacto" class="ig-btn primary">Contactar</a>
-      <a href="#servicios" class="ig-btn ghost">Servicios</a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank" class="ig-btn ghost">Seguir</a>
-    </div>
-
-    <div class="mini-grid">
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-01-tip-instagram-vs-web.png" alt="Publicación LEDSIGN Studio"></a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-04-manifiesto-diseno.png" alt="Publicación LEDSIGN Studio"></a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-06-cta-contacto.png" alt="Publicación LEDSIGN Studio"></a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-07-tipos-de-web.png" alt="Publicación LEDSIGN Studio"></a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-11-mitos-vs-realidad.png" alt="Publicación LEDSIGN Studio"></a>
-      <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-13-dato-primera-impresion.png" alt="Publicación LEDSIGN Studio"></a>
-    </div>
-  </div>
-
-  <div class="hero-headline reveal">
-    <h1>Convertimos ideas en <span class="grad-text">experiencias digitales</span></h1>
-    <p>Tu negocio, online. Diseño web y marketing digital para que consigas más clientes — el buen diseño comunica sin hablar.</p>
-    <a href="https://www.instagram.com/ledsign_studio/" target="_blank" class="community-pill" style="text-decoration:none;">🟢 Seguinos en <b>@ledsign_studio</b></a>
   </div>
 </header>
 
@@ -592,6 +577,56 @@
       <h3>Empezá tu proyecto digital</h3>
       <p>Contanos tu proyecto y te enviamos tu presupuesto a medida.</p>
       <a href="#contacto" class="btn-grad">Contanos tu proyecto</a>
+    </div>
+  </div>
+</section>
+
+<section id="comunidad">
+  <div class="wrap" style="text-align:center;">
+    <div class="section-tag reveal" style="justify-content:center;">Comunidad</div>
+    <h2 class="section-title reveal">Así nos ves en Instagram</h2>
+    <p class="section-sub reveal" style="margin:0 auto 50px;">Seguí de cerca los proyectos, tips y casos reales que compartimos todos los días.</p>
+
+    <div class="ig-card reveal" style="margin:0 auto;">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-inner">
+          <img src="assets/logo.png" alt="LEDSIGN Studio" class="brand-logo">
+        </div>
+      </div>
+
+      <div class="ig-name-row">
+        <h2>LEDSIGN Studio</h2>
+        <span class="verified">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+      <a href="https://www.instagram.com/ledsign_studio/" target="_blank" class="ig-handle">@ledsign_studio</a>
+      <div class="ig-category">Estudio creativo · Diseño Web &amp; Marketing Digital</div>
+      <p class="ig-bio">Somos un estudio creativo especializado en convertir ideas en experiencias digitales. Diseñamos y desarrollamos sitios web y campañas de marketing digital para que tu negocio consiga más clientes. Trabajamos 100% en remoto — si tu proyecto necesita una reunión presencial, la coordinamos sin problema.</p>
+
+      <a href="https://www.instagram.com/ledsign_studio/" target="_blank" style="text-decoration:none;color:inherit;">
+      <div class="ig-stats" style="cursor:pointer;" title="Ver perfil actualizado en Instagram">
+        <div class="stat"><strong>11</strong><span>Publicaciones</span></div>
+        <div class="stat"><strong>161</strong><span>Seguidores</span></div>
+        <div class="stat"><strong>3</strong><span>Seguidos</span></div>
+      </div>
+      </a>
+
+      <div class="ig-actions">
+        <a href="#contacto" class="ig-btn primary">Contactar</a>
+        <a href="#servicios" class="ig-btn ghost">Servicios</a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank" class="ig-btn ghost">Seguir</a>
+      </div>
+
+      <div class="mini-grid">
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-01-tip-instagram-vs-web.png" alt="Publicación LEDSIGN Studio"></a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-04-manifiesto-diseno.png" alt="Publicación LEDSIGN Studio"></a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-06-cta-contacto.png" alt="Publicación LEDSIGN Studio"></a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-07-tipos-de-web.png" alt="Publicación LEDSIGN Studio"></a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-11-mitos-vs-realidad.png" alt="Publicación LEDSIGN Studio"></a>
+        <a href="https://www.instagram.com/ledsign_studio/" target="_blank"><img src="assets/instagram-posts/post-13-dato-primera-impresion.png" alt="Publicación LEDSIGN Studio"></a>
+      </div>
     </div>
   </div>
 </section>
