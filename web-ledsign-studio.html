@@ -271,6 +271,50 @@
   }
   .compare-extra strong{color:var(--text);}
 
+  .gestion-wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  .proof-strip{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--grad-soft);border:1px solid var(--border);
+    padding:9px 20px;border-radius:30px;font-size:.86rem;font-weight:600;color:var(--text);
+    margin-top:22px;
+  }
+  .proof-strip .dot{width:7px;height:7px;border-radius:50%;background:var(--c2);flex-shrink:0;box-shadow:0 0 0 4px rgba(63,221,124,.18);}
+  .proof-strip b{color:var(--c2);}
+
+  .hint{margin-top:34px;font-size:.8rem;color:var(--text-dim-2);display:flex;align-items:center;justify-content:center;gap:8px;}
+  .hint svg{width:14px;height:14px;stroke:var(--text-dim-2);}
+
+  .modules{margin-top:22px;display:flex;flex-direction:column;gap:14px;text-align:left;}
+  .module{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .3s;}
+  .module.open{border-color:rgba(63,221,124,.35);}
+  .module-head{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:20px;width:100%;padding:24px 26px;cursor:pointer;}
+  .module-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.6rem;color:var(--text-dim-2);width:34px;flex-shrink:0;transition:color .3s;}
+  .module.open .module-num{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .module-icon{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s;}
+  .module.open .module-icon{background:var(--grad-soft);border-color:rgba(63,221,124,.3);}
+  .module-icon svg{width:20px;height:20px;stroke:var(--text-dim);transition:stroke .3s;}
+  .module.open .module-icon svg{stroke:var(--c2);}
+  .module-text{flex:1;min-width:0;}
+  .module-text h3{font-size:1.08rem;font-weight:700;margin-bottom:3px;}
+  .module-text p{font-size:.86rem;color:var(--text-dim);line-height:1.5;}
+  .module-chevron{flex-shrink:0;width:20px;height:20px;stroke:var(--text-dim-2);transition:transform .35s;}
+  .module.open .module-chevron{transform:rotate(180deg);stroke:var(--c2);}
+  .module-body-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease;}
+  .module.open .module-body-wrap{grid-template-rows:1fr;}
+  .module-body{overflow:hidden;}
+  .module-body ul{list-style:none;padding:0 26px 26px 80px;display:flex;flex-direction:column;gap:12px;}
+  .module-body li{display:flex;gap:11px;font-size:.93rem;color:var(--text-dim);line-height:1.55;}
+  .module-check{flex-shrink:0;color:var(--c2);font-weight:800;margin-top:1px;}
+
+  @media(prefers-reduced-motion:reduce){
+    .module-body-wrap,.module-chevron,.module-icon,.module-icon svg,.module-num,.module{transition:none;}
+  }
+  @media(max-width:600px){
+    .module-head{padding:20px 18px;gap:14px;}
+    .module-body ul{padding:0 18px 22px 18px;}
+    .module-num{font-size:1.3rem;width:26px;}
+  }
+
   /* ---------- CLIENTS ---------- */
   .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:50px;}
   .portfolio-card{
@@ -587,6 +631,94 @@
   </div>
 </section>
 
+<section id="sistema-gestion">
+  <div class="gestion-wrap" style="text-align:center;">
+    <div class="section-tag" style="justify-content:center;">Sistema de Gestión</div>
+    <h2 class="section-title">Un sistema, cuatro frentes cubiertos</h2>
+    <p class="section-sub" style="margin:0 auto;">No es solo un cartelito de "facturación". Es el mismo panel de administración completo que construimos para Wartung Automation: ventas, compras, cuenta corriente e informes, todo integrado a la web del negocio.</p>
+    <a href="https://wartung-automation.com.ar/" target="_blank" class="proof-strip" style="text-decoration:none;"><span class="dot"></span>Funcionando hoy en <b>wartung-automation.com.ar</b></a>
+
+    <div class="modules stagger" id="modulesList">
+      <div class="module open" data-i="0">
+        <button class="module-head">
+          <span class="module-num">01</span>
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></span>
+          <span class="module-text">
+            <h3>Ventas y facturación</h3>
+            <p>Desde el presupuesto hasta la factura con CAE, sin salir de un solo lugar.</p>
+          </span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="module-body-wrap"><div class="module-body"><ul>
+          <li><span class="module-check">✓</span>Presupuestos con vista previa de cómo le llegan al cliente antes de enviarlos</li>
+          <li><span class="module-check">✓</span>Facturación A/B/C/E con CAE y código QR</li>
+          <li><span class="module-check">✓</span>Envío automático por email con el PDF adjunto</li>
+          <li><span class="module-check">✓</span>Historial completo, con filtros y búsqueda por cliente</li>
+        </ul></div></div>
+      </div>
+
+      <div class="module" data-i="1">
+        <button class="module-head">
+          <span class="module-num">02</span>
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
+          <span class="module-text">
+            <h3>Compras y proveedores</h3>
+            <p>Lo que le comprás a cada proveedor, a cuánto, y cuánto le debés — siempre visible.</p>
+          </span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="module-body-wrap"><div class="module-body"><ul>
+          <li><span class="module-check">✓</span>Ficha de proveedores con saldo pendiente calculado en tiempo real</li>
+          <li><span class="module-check">✓</span>Compras, gastos y pagos, con retenciones incluidas cuando corresponde</li>
+          <li><span class="module-check">✓</span>Costo y proveedor asociado a cada producto del catálogo</li>
+          <li><span class="module-check">✓</span>Cuenta corriente de clientes y proveedores siempre al día</li>
+        </ul></div></div>
+      </div>
+
+      <div class="module" data-i="2">
+        <button class="module-head">
+          <span class="module-num">03</span>
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg></span>
+          <span class="module-text">
+            <h3>Catálogo y clientes</h3>
+            <p>Tu catálogo y la ficha de cada cliente, editables por vos mismo, sin depender de nadie.</p>
+          </span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="module-body-wrap"><div class="module-body"><ul>
+          <li><span class="module-check">✓</span>Panel propio para cargar y editar productos, sin depender de nadie más</li>
+          <li><span class="module-check">✓</span>Ficha de cliente con hasta 5 personas de contacto por empresa</li>
+          <li><span class="module-check">✓</span>Búsqueda, filtros y orden pensados para el uso del día a día</li>
+          <li><span class="module-check">✓</span>Remitos con numeración propia</li>
+        </ul></div></div>
+      </div>
+
+      <div class="module" data-i="3">
+        <button class="module-head">
+          <span class="module-num">04</span>
+          <span class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M12 20V4M20 20v-7"/></svg></span>
+          <span class="module-text">
+            <h3>Control y comunicación</h3>
+            <p>Los números para el contador y el registro de cada mail enviado, en el mismo lugar.</p>
+          </span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="module-body-wrap"><div class="module-body"><ul>
+          <li><span class="module-check">✓</span>Informes de IVA y gastos listos para pasarle al contador, exportables a CSV</li>
+          <li><span class="module-check">✓</span>Envío y registro de mails a cada cliente, con historial buscable</li>
+          <li><span class="module-check">✓</span>Roles de acceso distintos por usuario del panel</li>
+          <li><span class="module-check">✓</span>Información sensible del negocio, nunca expuesta en la web pública</li>
+        </ul></div></div>
+      </div>
+    </div>
+
+    <div class="hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 1 1 4 2.82V14M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      Tocá cada módulo para ver el detalle
+    </div>
+  </div>
+</section>
+
 <section id="clientes">
   <div class="wrap">
     <div class="reveal" style="text-align:center;">
@@ -801,6 +933,15 @@
     const subject = encodeURIComponent('Nuevo proyecto digital - ' + name);
     const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:leoledesma03@gmail.com?subject=${subject}&body=${body}`;
+  });
+
+  document.querySelectorAll('#modulesList .module-head').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var mod = btn.parentElement;
+      var wasOpen = mod.classList.contains('open');
+      document.querySelectorAll('#modulesList .module').forEach(function(m){ m.classList.remove('open'); });
+      if(!wasOpen) mod.classList.add('open');
+    });
   });
 </script>
 
