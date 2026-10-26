@@ -61,10 +61,32 @@
   section{position:relative;padding:110px 0;}
 
   /* ---------- NAV ---------- */
+  /* ---------- PROMO BAR ---------- */
+  .promo-bar{
+    display:none;position:fixed;top:0;left:0;right:0;z-index:1001;
+    background:var(--grad);color:#070808;
+    padding:11px 44px 11px 20px;text-align:center;
+  }
+  .promo-bar.show{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .promo-bar p{font-size:.86rem;font-weight:600;margin:0;min-width:0;}
+  .promo-bar b{font-weight:800;}
+  .promo-cta{
+    background:#070808;color:var(--text);padding:6px 16px;border-radius:20px;
+    font-weight:700;font-size:.8rem;white-space:nowrap;flex-shrink:0;
+  }
+  .promo-close{
+    position:absolute;right:10px;top:10px;
+    background:none;border:none;color:#070808;font-size:1.3rem;line-height:1;
+    cursor:pointer;opacity:.7;padding:4px;
+  }
+  .promo-close:hover{opacity:1;}
+  body.has-promo nav{top:var(--promo-h,0px);}
+  body.has-promo .hero{padding-top:calc(160px + var(--promo-h,0px));}
+
   nav{
     position:fixed;top:0;left:0;right:0;z-index:1000;
     padding:18px 0;
-    transition:background .35s ease,padding .35s ease,border-color .35s ease;
+    transition:background .35s ease,padding .35s ease,border-color .35s ease,top .3s ease;
     border-bottom:1px solid transparent;
   }
   nav.scrolled{
@@ -442,6 +464,12 @@
 </style>
 </head>
 <body>
+
+<div class="promo-bar" id="promoBar">
+  <p>🚀 <b>15% OFF</b> en nuestros servicios para nuevos clientes · Válido del 1 al 7 de noviembre</p>
+  <a href="#contacto" class="promo-cta">Quiero mi descuento →</a>
+  <button class="promo-close" id="promoClose" aria-label="Cerrar aviso">&times;</button>
+</div>
 
 <nav id="navbar">
   <div class="wrap nav-inner">
@@ -958,6 +986,38 @@
 </footer>
 
 <script>
+  // Promo bar: 15% OFF, 1-7 nov 2026
+  (function(){
+    const promoBar = document.getElementById('promoBar');
+    const promoClose = document.getElementById('promoClose');
+    const PROMO_ID = 'promo-15off-nov2026';
+    const start = new Date('2026-11-01T00:00:00');
+    const end = new Date('2026-11-08T00:00:00'); // exclusive, covers through nov 7
+    const now = new Date();
+    const dismissed = localStorage.getItem(PROMO_ID) === 'dismissed';
+
+    function setPromoHeight(){
+      document.documentElement.style.setProperty('--promo-h', promoBar.offsetHeight + 'px');
+    }
+
+    if (now >= start && now < end && !dismissed) {
+      promoBar.classList.add('show');
+      document.body.classList.add('has-promo');
+      setPromoHeight();
+      window.addEventListener('resize', setPromoHeight);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setPromoHeight);
+      }
+    }
+
+    promoClose.addEventListener('click', () => {
+      localStorage.setItem(PROMO_ID, 'dismissed');
+      promoBar.classList.remove('show');
+      document.body.classList.remove('has-promo');
+      document.documentElement.style.setProperty('--promo-h', '0px');
+    });
+  })();
+
   // Nav scroll state
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
